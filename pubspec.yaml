@@ -41,6 +41,8 @@ dependencies:
   intl: ^0.17.0
   font_awesome_flutter: ^10.2.1
   bubble_tab_indicator: ^0.1.6
+  fl_chart: ^0.55.2
+  linear_progress_bar: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +65,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - assets/images/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
