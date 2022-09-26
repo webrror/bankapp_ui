@@ -1,3 +1,4 @@
+import 'package:bankapp_ui/statistic.dart';
 import 'package:flutter/material.dart';
 
 import 'home.dart';
@@ -28,6 +29,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const Home(),
+      routes: {
+        Home.routeName: (context) => const Home(),
+        Statistic.routeName: (context) => const Statistic()
+      },
     );
   }
 }

@@ -40,6 +40,7 @@ dependencies:
   fluentui_system_icons: ^1.1.181
   intl: ^0.17.0
   font_awesome_flutter: ^10.2.1
+  bubble_tab_indicator: ^0.1.6
 
 dev_dependencies:
   flutter_test:
