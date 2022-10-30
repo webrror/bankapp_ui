@@ -1,11 +1,9 @@
 import 'package:bankapp_ui/widgets/target_card.dart';
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
-import 'package:fl_chart/fl_chart.dart';
+
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class Statistic extends StatefulWidget {
   const Statistic({super.key});
@@ -16,10 +14,13 @@ class Statistic extends StatefulWidget {
 }
 
 class _StatisticState extends State<Statistic> {
+  List<Color> color = const [
+    Color.fromRGBO(200, 253, 205, 1),
+    Color.fromRGBO(206, 199, 253, 1),
+    Color.fromRGBO(200, 253, 205, 1),
+  ];
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
     return DefaultTabController(
       length: 2,
       animationDuration: const Duration(milliseconds: 200),
@@ -27,8 +28,8 @@ class _StatisticState extends State<Statistic> {
           appBar: AppBar(
             centerTitle: true,
             elevation: 0,
-            systemOverlayStyle:
-                SystemUiOverlayStyle(statusBarIconBrightness: Brightness.light),
+            systemOverlayStyle: const SystemUiOverlayStyle(
+                statusBarIconBrightness: Brightness.light),
             iconTheme: const IconThemeData(color: Colors.black),
             backgroundColor: Colors.transparent,
             title: const Text(
@@ -38,7 +39,7 @@ class _StatisticState extends State<Statistic> {
             actions: [
               IconButton(
                   onPressed: () {},
-                  icon: Icon(FluentIcons.arrow_sync_16_regular))
+                  icon: const Icon(FluentIcons.arrow_sync_16_regular))
             ],
             bottom: PreferredSize(
               preferredSize: const Size(double.infinity, 70),
@@ -82,20 +83,20 @@ class _StatisticState extends State<Statistic> {
           ),
           body: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0, left: 30, right: 30),
-                child: Container(
-                  height: 200,
-                  width: double.infinity,
-                  color: Colors.white,
-                  child: const Center(child: Text("Graph Placeholder")),
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.only(top: 20.0, left: 30, right: 30),
+              //   child: Container(
+              //     height: 200,
+              //     width: double.infinity,
+              //     color: Colors.white,
+              //     child: const Center(child: Text("Graph Placeholder")),
+              //   ),
+              // ),
               const SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10.0, left: 20, right: 20),
+              const Padding(
+                padding: EdgeInsets.only(top: 10.0, left: 20, right: 20),
                 child: TargetCard(
                   percentage: 87,
                 ),
@@ -118,21 +119,22 @@ class _StatisticState extends State<Statistic> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Expanded(
+              SizedBox(
+                height: 200,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20.0),
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 4,
+                    itemCount: 3,
                     itemBuilder: (context, index) {
                       return Container(
                         width: 180,
                         height: 180,
                         decoration: BoxDecoration(
-                            color: Color.fromRGBO(200, 253, 205, 1),
+                            color: color[index],
                             borderRadius: BorderRadius.circular(15)),
                         margin: const EdgeInsets.only(right: 10),
                         child: Padding(
@@ -140,7 +142,7 @@ class _StatisticState extends State<Statistic> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
+                            children: const [
                               Text(
                                 "Grocery",
                                 style: TextStyle(fontWeight: FontWeight.bold),

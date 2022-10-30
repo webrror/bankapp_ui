@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:linear_progress_bar/linear_progress_bar.dart';
 
 class TargetCard extends StatelessWidget {
@@ -19,7 +16,7 @@ class TargetCard extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: Colors.white70,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Colors.black12,
               offset: Offset(
@@ -38,7 +35,7 @@ class TargetCard extends StatelessWidget {
               'assets/images/trophy.png',
               height: 85,
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
             Column(
@@ -47,9 +44,10 @@ class TargetCard extends StatelessWidget {
               children: [
                 Text(
                   "Target completed $percentage%",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 16),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 SizedBox(
@@ -59,29 +57,29 @@ class TargetCard extends StatelessWidget {
                     progressType: LinearProgressBar
                         .progressTypeLinear, // Use Linear progress
                     currentStep: 4,
-                    progressColor: Color.fromRGBO(194, 186, 245, 1),
+                    progressColor: const Color.fromRGBO(194, 186, 245, 1),
                     backgroundColor: Colors.grey,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 TextButton(
                   onPressed: () {},
-                  child: Text(
-                    "View Target",
-                    style: TextStyle(color: Colors.black),
-                  ),
                   style: ButtonStyle(
                       padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                          EdgeInsets.symmetric(horizontal: 20)),
+                          const EdgeInsets.symmetric(horizontal: 20)),
                       shape: MaterialStateProperty.all<OutlinedBorder>(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50.0),
                         ),
                       ),
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromRGBO(200, 253, 205, 1))),
+                          const Color.fromRGBO(200, 253, 205, 1))),
+                  child: const Text(
+                    "View Target",
+                    style: TextStyle(color: Colors.black),
+                  ),
                 )
               ],
             )

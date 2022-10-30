@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Color.fromRGBO(200, 253, 205, 1),
+        backgroundColor: const Color.fromRGBO(200, 253, 205, 1),
         leading: IconButton(
             onPressed: () {},
             icon: const Icon(

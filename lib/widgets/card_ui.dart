@@ -1,7 +1,5 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
@@ -22,27 +20,25 @@ class CardUI extends StatefulWidget {
 class _CardUIState extends State<CardUI> {
   @override
   Widget build(BuildContext context) {
-    NumberFormat toINR = NumberFormat.currency(locale: "en_IN",
-      symbol: "₹");
+    NumberFormat toINR = NumberFormat.currency(locale: "en_IN", symbol: "₹");
 
     return Container(
         height: 200,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.84), 
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black45,
-              offset: Offset(
-                10.0,
-                12.0,
+            color: Colors.black.withOpacity(0.84),
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black45,
+                offset: Offset(
+                  10.0,
+                  12.0,
+                ),
+                blurRadius: 20.0,
+                spreadRadius: 3.0,
               ),
-              blurRadius: 20.0,
-              spreadRadius: 3.0,
-            ),
-          ]
-        ),
+            ]),
         child: Column(
           children: [
             Padding(
@@ -94,10 +90,22 @@ class _CardUIState extends State<CardUI> {
                   ),
                   const Spacer(),
                   widget.type == 'visa'
-                  ? const FaIcon(FontAwesomeIcons.ccVisa, color: Colors.white, size: 35,)
-                  : widget.type == 'mastercard'
-                  ? const FaIcon(FontAwesomeIcons.ccMastercard, color: Colors.white, size: 35,)
-                  : const FaIcon(FontAwesomeIcons.ccAmex, color: Colors.white, size: 35,)
+                      ? const FaIcon(
+                          FontAwesomeIcons.ccVisa,
+                          color: Colors.white,
+                          size: 35,
+                        )
+                      : widget.type == 'mastercard'
+                          ? const FaIcon(
+                              FontAwesomeIcons.ccMastercard,
+                              color: Colors.white,
+                              size: 35,
+                            )
+                          : const FaIcon(
+                              FontAwesomeIcons.ccAmex,
+                              color: Colors.white,
+                              size: 35,
+                            )
                 ],
               ),
             )
